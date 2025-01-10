@@ -2,7 +2,8 @@ name: Run tests
 
 on:
   push:
-    branches: [config/ci]
+    branches: 
+      -config/ci
 
 jobs:
   pytest:
@@ -39,7 +40,7 @@ jobs:
     - name: Check for outdated dependencies
       run: |
         pip list --outdated
-        
+
     - name: Run Tests
       env:
         FLASK_ENV: testing
